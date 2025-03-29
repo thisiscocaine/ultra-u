@@ -59,6 +59,94 @@
             top: 50%;
             transform: translateY(-50%);
         }
+
+
+ /* Responsive Breakpoints */
+        
+        /* Small tablets (portrait) */
+        @media (min-width: 600px) {
+            .title {
+                font-size: 1.8rem;
+            }
+            
+            /* Adjust galaxy density for medium screens */
+            body::after {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                background: radial-gradient(circle at center, transparent 60%, rgba(0,0,10,0.3) 100%);
+            }
+        }
+        
+        /* Tablets (landscape) and small laptops */
+        @media (min-width: 768px) and (orientation: landscape) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            /* Enhance visual elements for larger screens */
+            body {
+                background: radial-gradient(ellipse at center, #020111 0%, #020111 40%, #191528 75%, #3a3e52 100%);
+            }
+        }
+        
+        /* Standard laptops and desktops */
+        @media (min-width: 992px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            /* Add more stars and details for larger screens */
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/><feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.02 0"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>');
+                opacity: 0.15;
+            }
+        }
+        
+        /* Large desktops and high-res displays */
+        @media (min-width: 1200px) {
+            .title {
+                font-size: 3rem;
+            }
+            
+            /* Ultra HD optimizations */
+            body {
+                background: radial-gradient(ellipse at center, #020111 0%, #020111 35%, #191528 70%, #3a3e52 100%);
+            }
+        }
+        
+        /* Mobile landscape orientation */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .title {
+                font-size: 1.2rem;
+                top: 10px;
+            }
+            
+            /* Adjust layout for short screens */
+            body {
+                background: radial-gradient(ellipse at center, #020111 0%, #020111 50%, #191528 85%, #3a3e52 100%);
+            }
+        }
+        
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            canvas {
+                image-rendering: crisp-edges;
+            }
+        }
+    </style>
+
     </style>
 </head>
 <body>
